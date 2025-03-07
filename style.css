@@ -25,17 +25,18 @@ Menor prioridade que id: Se houver conflito de estilos, id tem precedência.
 header {  
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(to top, #1A5C38, #24804D, #30AC67, #3BD47F);
-    height: 180px;
-    color:white ;
-    padding: 10px; /*espaçamento entre o titulo e a borda de cima do site*/
+    min-height: 150px; /* Define um tamanho mínimo para evitar cortes */
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tela */
+    color: white;
+    padding: 20px 10px; /* Ajusta o espaçamento interno */
     text-align: center;
-    text-shadow: 2px 2px 5px #0000006f; /*2px 2px → deslocamento da sombra (horizontal e vertical).
-    5px → espalhamento da sombra.*/
-    margin: 0px;
-    border: none;
+    text-shadow: 2px 2px 5px #0000006f;
+    box-sizing: border-box; /* Garante que padding não afete a largura total */
+    overflow-x: hidden;
 }
 
-p {
+
+header > p {
     margin-left: 10px;
     text-indent: 20px;
     line-height: 1.4
@@ -44,7 +45,7 @@ p {
 nav {
     display: flex; /*alinha os links*/
     margin-top: 40px; /*move os links pra baixo*/
-    
+    gap: 10px; /* Adiciona espaçamento entre os links */
 }
 
 a {
@@ -66,6 +67,7 @@ body {
     /*remove os espaços do cabeçalho */
     background-color: #84E1AD;
     font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
 }
 
 h1.title {
@@ -78,6 +80,7 @@ article {
     font-size:small ;
     font-weight: 500;
     background-color: white;
+    max-width: 90%;
     width: 700px;
      /*usei par afastar o footer do background branco do article*/
     padding: 5px 20px 20px 20px;
@@ -88,10 +91,10 @@ article {
     
 }
 
+
 section > h1 {
     font-size: x-large;
     color: #195B37;
-
 }
 
 h2 {
@@ -99,16 +102,15 @@ h2 {
     background-color: #C9EDD8;
     color: #195B37;
     border-radius: 10px;
-    border-left: 20px;
+    padding-left: 10px; /* Adiciona um espaço interno para destacar o efeito */
 }
 
 img {
+    max-width: 100%;
+    height: auto;
     display: block;
-    margin: auto;
+    margin: 0 auto;
 }
-
-
-
 
 aside {
     background-color: #C5EBD6;
@@ -160,15 +162,6 @@ ul{
     margin: 0;
   }
 
-footer {
-    background-color: #1A5C38;
-    font-size: x-small;
-    color: white;
-    text-align: center;
-    padding: 0.2px;
-    width: 100%;
-}
-
 div.video {
     margin: 0px -20px 30px -20px;
     padding: 20px;
@@ -183,4 +176,12 @@ div.video > iframe {
     left: 0%;
     width: 100%;
     height: 100%;
+}
+footer {
+    background-color: #1A5C38;
+    font-size: x-small;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    width: 100%;
 }
